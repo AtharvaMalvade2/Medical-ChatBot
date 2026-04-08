@@ -32,7 +32,7 @@ jobs:
         run: |
           IMAGE_URI="${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
           echo $IMAGE_URI
-          docker buildx build --platform linux/amd64 -t "$IMAGE_URI" --load .
+          docker buildx build --no-cache --platform linux/amd64 -t "$IMAGE_URI" --load .
           docker push "$IMAGE_URI"
           echo "image=$IMAGE_URI" >> $GITHUB_OUTPUT
 
