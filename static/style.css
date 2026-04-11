@@ -48,7 +48,8 @@ border-radius: 0 0 15px 15px !important;
 	background-color: rgba(0,0,0,0.3) !important;
 	border:0 !important;
 	color:white !important;
-	height: 60px !important;
+	height: auto !important;
+	min-height: 45px;
 	overflow-y: auto;
 }
 	.type_msg:focus{
@@ -220,4 +221,33 @@ border-radius: 0 0 15px 15px !important;
 	.contacts_card{
 	margin-bottom: 15px !important;
 }
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0;
+    }
+
+    .chat {
+        margin: 0;
+        width: 100%;
+    }
+
+    .card {
+        height: 100vh; /* full screen */
+        border-radius: 0 !important;
+    }
+
+    .msg_card_body {
+        height: calc(100vh - 120px); /* adjust for header + input */
+    }
+
+    .card-header {
+        border-radius: 0 !important;
+    }
+
+    .card-footer {
+        border-radius: 0 !important;
+    }
 }
